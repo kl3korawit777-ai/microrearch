@@ -1169,7 +1169,6 @@ const MICROBES = [
     vector: 'แพร่ผ่านการสัมผัสศีรษะโดยตรง การใช้หวี หมอน ผ้าเช็ดตัวร่วมกัน',
     additional: 'รักษา: Permethrin 1% shampoo, Malathion lotion, หวีสางไข่ (nit comb), ทำซ้ำที่ 7–10 วัน'
   },
-];
 
   // ---- Protozoa เพิ่มเติม ----
   {
@@ -1468,6 +1467,7 @@ const MICROBES = [
     vector: 'แพร่ผ่านการสัมผัสใกล้ชิด ใช้เครื่องสำอาง ผ้าเช็ดตัวร่วมกัน',
     additional: 'รักษา: Permethrin, Metronidazole topical, Tea tree oil, Ivermectin (severe)'
   },
+];
 
 // โครงสร้างหมวดหมู่ (สำหรับ sidebar)
 const CATEGORY_TREE = [
