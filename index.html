@@ -43,10 +43,6 @@
           <input type="text" name="username" required minlength="3" maxlength="20" autocomplete="username" />
         </div>
         <div class="form-field">
-          <label>ชื่อแสดงผล</label>
-          <input type="text" name="displayName" maxlength="40" placeholder="ใส่ชื่อจริงหรือชื่อเล่น" />
-        </div>
-        <div class="form-field">
           <label>รหัสผ่าน <span style="color:var(--danger)">*</span></label>
           <input type="password" name="password" required minlength="4" autocomplete="new-password" />
         </div>
@@ -57,9 +53,6 @@
         <button type="submit" class="btn btn-success">✨ สมัครสมาชิก</button>
       </form>
 
-      <div class="auth-hint">
-        บัญชีตัวอย่าง: <code>admin</code> / <code>admin123</code>
-      </div>
     </div>
   </div>
 
@@ -81,7 +74,6 @@
     </div>
 
     <div class="header-actions">
-      <button class="btn btn-outline" id="exportBtn" title="ส่งออกข้อมูล JSON">⬇ ส่งออก</button>
       <button class="btn btn-primary" id="addBtn">+ เพิ่มเชื้อ</button>
       <div class="user-badge" id="userBadge">
         <div class="user-avatar" id="userAvatar">?</div>

@@ -79,7 +79,7 @@ async function doRegister(e) {
   e.preventDefault();
   const form = e.target;
   const username = form.username.value.trim().toLowerCase();
-  const displayName = form.displayName.value.trim() || username;
+  const displayName = username;
   const pw = form.password.value;
   const pw2 = form.password2.value;
   if (!/^[a-z0-9_]+$/.test(username)) { showAuthError('ชื่อผู้ใช้ใช้ได้เฉพาะ a-z, 0-9, _'); return false; }
@@ -547,7 +547,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   $('addBtn').onclick = () => openEdit(null);
-  $('exportBtn').onclick = exportData;
   $('editForm').addEventListener('submit', saveMicrobe);
   $('deleteBtn').onclick = () => state.editingId && deleteMicrobe(state.editingId);
 

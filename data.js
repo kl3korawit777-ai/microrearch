@@ -173,6 +173,428 @@ const MICROBES = [
     additional: 'วินิจฉัย: MAT (microscopic agglutination test), PCR รักษา: Doxycycline (mild), Penicillin G (severe)'
   },
 
+  // ---- Gram + cocci เพิ่มเติม ----
+  {
+    id: 'enterococcus',
+    name: 'Enterococcus faecalis',
+    thai: 'เอนเทอโรค็อกคัส ฟีคาลิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:positive', 'oxygen:facultative'],
+    characteristics: 'ค็อกคัสแกรมบวก เรียงตัวเป็นคู่หรือสาย ทนต่อ 6.5% NaCl และ bile ขึ้นใน BEA agar (สีดำ) Catalase negative',
+    pathogenesis: 'UTI (พบบ่อยในผู้ป่วยใส่สายสวน), endocarditis (subacute), intra-abdominal infection, sepsis เชื้อดื้อยา VRE (Vancomycin-Resistant Enterococcus) เป็นปัญหาในโรงพยาบาล',
+    vector: 'พบเป็น normal flora ในลำไส้ ติดเชื้อจากเครื่องมือทางการแพทย์ การปนเปื้อนข้าม',
+    additional: 'รักษา: Ampicillin (sensitive strain), Linezolid/Daptomycin (VRE) มักดื้อ Cephalosporins โดยกำเนิด'
+  },
+  {
+    id: 'staph-epidermidis',
+    name: 'Staphylococcus epidermidis',
+    thai: 'สแตฟิโลค็อกคัส อีพิเดอร์มิดิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:positive', 'oxygen:facultative'],
+    characteristics: 'ค็อกคัสแกรมบวกเรียงเป็นกลุ่ม Coagulase negative (CoNS) Novobiocin sensitive สร้าง biofilm ที่อุปกรณ์ทางการแพทย์',
+    pathogenesis: 'การติดเชื้อที่อุปกรณ์เทียม (prosthetic device) — catheter-related bacteremia, prosthetic valve endocarditis, CSF shunt infection, joint prosthesis',
+    vector: 'พบเป็น normal flora บนผิวหนัง ติดเชื้อจากการใส่อุปกรณ์ทางการแพทย์',
+    additional: 'รักษา: Vancomycin (มักดื้อ Methicillin) อาจต้องเอาอุปกรณ์ออก'
+  },
+  {
+    id: 'strep-agalactiae',
+    name: 'Streptococcus agalactiae',
+    thai: 'สเตรปโตค็อกคัส อะกาแลคเทีย',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:positive', 'oxygen:facultative'],
+    characteristics: 'Group B Streptococcus (GBS) ค็อกคัสแกรมบวก เรียงสาย Beta-hemolytic, Bacitracin resistant, CAMP test positive, Hippurate positive',
+    pathogenesis: 'สาเหตุหลักของ neonatal sepsis และ meningitis ในทารกแรกเกิด, postpartum endometritis, UTI ในหญิงตั้งครรภ์, ผู้สูงอายุ/เบาหวาน: cellulitis, osteomyelitis',
+    vector: 'พบเป็น normal flora ในช่องคลอดและทางเดินอาหาร แพร่จากแม่สู่ลูกขณะคลอด',
+    additional: 'คัดกรองหญิงตั้งครรภ์ที่ 35–37 สัปดาห์ รักษา/ป้องกัน: Penicillin G IV ระหว่างคลอด'
+  },
+  {
+    id: 'strep-viridans',
+    name: 'Streptococcus viridans',
+    thai: 'สเตรปโตค็อกคัส วิริแดนส์',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:positive', 'oxygen:facultative'],
+    characteristics: 'กลุ่มสเตรปโตค็อกคัส (S. mutans, S. sanguinis, S. mitis) Alpha-hemolytic, Optochin resistant, ไม่ละลายใน bile',
+    pathogenesis: 'ฟันผุ (dental caries) จาก S. mutans, subacute bacterial endocarditis (SBE) บนลิ้นหัวใจที่ผิดปกติหลังการทำฟัน, brain abscess',
+    vector: 'พบเป็น normal flora ในช่องปากและทางเดินหายใจส่วนบน เข้าสู่กระแสเลือดผ่านหัตถการทางทันตกรรม',
+    additional: 'รักษา: Penicillin G ป้องกัน SBE: ให้ Amoxicillin ก่อนทำฟันในผู้ป่วยลิ้นหัวใจผิดปกติ'
+  },
+
+  // ---- Gram + bacilli เพิ่มเติม ----
+  {
+    id: 'bacillus-anthracis',
+    name: 'Bacillus anthracis',
+    thai: 'บาซิลลัส แอนทราซิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:positive', 'oxygen:aerobic'],
+    characteristics: 'แท่งใหญ่แกรมบวก เรียงเป็นสายคล้ายไม้ไผ่ (bamboo rod) สร้างสปอร์ มี polypeptide capsule (D-glutamate) เป็น virulence factor',
+    pathogenesis: 'แอนแทรกซ์ (Anthrax) — Cutaneous (eschar สีดำ), Inhalation (woolsorter\'s disease, mediastinitis), GI form มี anthrax toxin (PA + EF + LF) ใช้เป็นอาวุธชีวภาพ',
+    vector: 'สปอร์ในดิน ติดต่อจากสัตว์เลี้ยง (วัว แพะ แกะ) หรือผลิตภัณฑ์สัตว์ (ขนแกะ หนัง)',
+    additional: 'รักษา: Ciprofloxacin, Doxycycline มีวัคซีน AVA ใช้ในกองทัพ'
+  },
+  {
+    id: 'bacillus-cereus',
+    name: 'Bacillus cereus',
+    thai: 'บาซิลลัส ซีเรียส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:positive', 'oxygen:facultative'],
+    characteristics: 'แท่งแกรมบวก สร้างสปอร์ Beta-hemolytic Motile ทนความร้อน',
+    pathogenesis: '2 รูปแบบ — Emetic type: คลื่นไส้ อาเจียนจาก preformed toxin (cereulide) ใน "fried rice syndrome" (ข้าวผัดทิ้งไว้นาน), Diarrheal type: ท้องเสียจาก enterotoxin หลังกิน 8–16 ชม.',
+    vector: 'อาหารปนเปื้อนสปอร์ โดยเฉพาะข้าว ก๋วยเตี๋ยวที่อุ่นซ้ำไม่ดี',
+    additional: 'หายได้เอง รักษาประคับประคอง'
+  },
+  {
+    id: 'listeria',
+    name: 'Listeria monocytogenes',
+    thai: 'ลิสทีเรีย โมโนไซโตจีเนส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:positive', 'oxygen:facultative'],
+    characteristics: 'แท่งสั้นแกรมบวก เคลื่อนที่แบบ tumbling motility ที่ 25°C เจริญได้ที่อุณหภูมิตู้เย็น (cold enrichment) Beta-hemolytic, Catalase positive',
+    pathogenesis: 'Listeriosis — meningitis ในทารกแรกเกิด, ผู้สูงอายุ, immunocompromised, แท้ง/ตายคลอดในหญิงตั้งครรภ์ (granulomatosis infantiseptica)',
+    vector: 'อาหารแช่เย็น เช่น นมไม่พาสเจอร์ไรส์ ชีสนิ่ม ผักสด ไส้กรอก เนื้อพร้อมรับประทาน',
+    additional: 'รักษา: Ampicillin + Gentamicin (Cephalosporins ใช้ไม่ได้ผล)'
+  },
+  {
+    id: 'corynebacterium',
+    name: 'Corynebacterium diphtheriae',
+    thai: 'คอรีนแบคทีเรียม ดิฟทีเรีย',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:positive', 'oxygen:facultative'],
+    characteristics: 'แท่งแกรมบวก รูปร่าง club-shaped เรียงตัวเหมือนตัวอักษรจีน (Chinese letter) มี metachromatic granules ย้อมด้วย Loeffler/Albert stain เจริญใน Tellurite agar',
+    pathogenesis: 'โรคคอตีบ (Diphtheria) — pseudomembrane สีเทาในลำคอ ปิดทางเดินหายใจ, myocarditis, neuropathy จาก diphtheria toxin (ABA toxin ขัดขวาง EF-2)',
+    vector: 'แพร่ผ่านละอองฝอยทางเดินหายใจ',
+    additional: 'ป้องกัน: วัคซีน DTP/Td รักษา: Diphtheria antitoxin (DAT) + Erythromycin/Penicillin'
+  },
+  {
+    id: 'c-difficile',
+    name: 'Clostridioides difficile',
+    thai: 'คลอสตริดิออยเดส ดิฟิซิล',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:positive', 'oxygen:anaerobic'],
+    characteristics: 'แท่งแกรมบวก สร้างสปอร์ Strict anaerobe ผลิต toxin A (enterotoxin) และ toxin B (cytotoxin)',
+    pathogenesis: 'Pseudomembranous colitis ภายหลังใช้ยาปฏิชีวนะ (โดยเฉพาะ Clindamycin, Cephalosporins, Fluoroquinolones) ท้องเสียรุนแรง mucus ปนเลือด toxic megacolon',
+    vector: 'แพร่ทาง fecal-oral ในโรงพยาบาล สปอร์ทนต่อ alcohol-based hand rub ต้องล้างมือด้วยสบู่',
+    additional: 'วินิจฉัย: stool toxin assay, GDH antigen, NAAT รักษา: Vancomycin oral, Fidaxomicin, Fecal microbiota transplant (FMT)'
+  },
+  {
+    id: 'c-perfringens',
+    name: 'Clostridium perfringens',
+    thai: 'คลอสตริเดียม เพอร์ฟริงเจนส์',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:positive', 'oxygen:anaerobic'],
+    characteristics: 'แท่งใหญ่แกรมบวก สร้างสปอร์ Anaerobe (aerotolerant) double zone hemolysis บน blood agar ผลิต alpha toxin (lecithinase)',
+    pathogenesis: 'Gas gangrene (myonecrosis) — แผลลึก ปวดรุนแรง crepitus จาก gas, food poisoning (ระยะฟักตัว 8–16 ชม. ท้องเสียจาก enterotoxin), necrotizing enteritis',
+    vector: 'สปอร์ในดิน อุจจาระสัตว์ เข้าทางบาดแผลลึก หรืออาหารเนื้อสัตว์อุ่นซ้ำ',
+    additional: 'รักษา gas gangrene: surgical debridement + Penicillin G + Clindamycin, hyperbaric oxygen'
+  },
+
+  // ---- Gram − cocci เพิ่มเติม ----
+  {
+    id: 'neisseria-meningitidis',
+    name: 'Neisseria meningitidis',
+    thai: 'ไนซีเรีย เมนิงไจไทดิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'ค็อกคัสแกรมลบ เรียงเป็นคู่รูปเมล็ดกาแฟ (kidney-shaped diplococci) Oxidase positive มี polysaccharide capsule (serogroups A, B, C, W, Y) เพาะใน Thayer-Martin',
+    pathogenesis: 'เยื่อหุ้มสมองอักเสบ (meningococcal meningitis), meningococcemia พร้อม petechial rash, Waterhouse-Friderichsen syndrome (ต่อมหมวกไตวายเฉียบพลัน)',
+    vector: 'แพร่ผ่านละอองฝอย พบเป็น normal flora ใน nasopharynx ของ 5–10% ของประชากร',
+    additional: 'รักษา: Ceftriaxone, Penicillin G ป้องกันคนสัมผัสใกล้ชิด: Ciprofloxacin, Rifampin มีวัคซีน MenACWY, MenB'
+  },
+  {
+    id: 'moraxella',
+    name: 'Moraxella catarrhalis',
+    thai: 'โมแรกเซลลา คาทาราลิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'ค็อกคัสแกรมลบ เรียงคู่ Oxidase positive, DNase positive, Beta-lactamase producer',
+    pathogenesis: 'หูชั้นกลางอักเสบ (otitis media) อันดับ 3 ในเด็ก, ไซนัสอักเสบ, COPD exacerbation, ปอดบวมในผู้สูงอายุ',
+    vector: 'พบเป็น normal flora ในทางเดินหายใจส่วนบน แพร่ผ่านละอองฝอย',
+    additional: 'รักษา: Amoxicillin-clavulanate, Cephalosporins gen 2-3, Macrolides'
+  },
+
+  // ---- Gram − bacilli เพิ่มเติม ----
+  {
+    id: 'klebsiella',
+    name: 'Klebsiella pneumoniae',
+    thai: 'เคลบเซียลลา นิวโมเนีย',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:facultative'],
+    characteristics: 'แท่งสั้นแกรมลบ มี polysaccharide capsule ขนาดใหญ่ (mucoid colony) Lactose fermenter, Indole negative, non-motile',
+    pathogenesis: 'ปอดบวม (เสมหะคล้ายแยมคูแรนต์ "currant jelly sputum"), UTI, liver abscess (พบในไทย เอเชีย), bacteremia เชื้อดื้อยา KPC, NDM, ESBL',
+    vector: 'พบในทางเดินอาหาร แพร่ในโรงพยาบาล',
+    additional: 'รักษา: Carbapenem, Ceftriaxone (ตาม sensitivity) ระวังเชื้อ CRE ดื้อยาทั้งหมด'
+  },
+  {
+    id: 'pseudomonas',
+    name: 'Pseudomonas aeruginosa',
+    thai: 'ซูโดโมแนส แอรูจิโนซา',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'แท่งแกรมลบ Obligate aerobe Oxidase positive Non-lactose fermenter สร้างเม็ดสี pyocyanin (เขียว-น้ำเงิน) และ pyoverdin (เหลือง-เขียว) กลิ่นองุ่น',
+    pathogenesis: 'แผลไฟไหม้ติดเชื้อ (สีเขียว), ปอดบวมในผู้ป่วย CF, hospital-acquired pneumonia (VAP), UTI ในผู้ใส่สายสวน, sepsis (ecthyma gangrenosum), หูชั้นนอกอักเสบในผู้ใส่หูฟัง (swimmer\'s ear)',
+    vector: 'พบในน้ำ ดิน แพร่ในโรงพยาบาล อุปกรณ์ที่เปียกน้ำ',
+    additional: 'รักษา: Anti-pseudomonal beta-lactam (Piperacillin-tazobactam, Cefepime, Carbapenem) + Aminoglycoside/Fluoroquinolone'
+  },
+  {
+    id: 'haemophilus',
+    name: 'Haemophilus influenzae',
+    thai: 'ฮีโมฟิลัส อินฟลูเอนเซ',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:facultative'],
+    characteristics: 'แท่งสั้นแกรมลบ (coccobacillus) ต้องการ factor X (hemin) และ V (NAD) เจริญบน chocolate agar Satellite phenomenon รอบ S. aureus',
+    pathogenesis: 'Type b (Hib) — meningitis ในเด็ก, epiglottitis (cherry red epiglottis), septic arthritis, otitis media, sinusitis, pneumonia',
+    vector: 'แพร่ผ่านละอองฝอย พบเป็น normal flora ใน nasopharynx',
+    additional: 'ป้องกัน: วัคซีน Hib รักษา: Ceftriaxone, Amoxicillin-clavulanate'
+  },
+  {
+    id: 'bordetella',
+    name: 'Bordetella pertussis',
+    thai: 'บอร์เดเทลลา เพอร์ทัสซิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'แท่งสั้นแกรมลบ (coccobacillus) Strict aerobe เพาะใน Bordet-Gengou หรือ Regan-Lowe agar ผลิต pertussis toxin, FHA, tracheal cytotoxin',
+    pathogenesis: 'โรคไอกรน (Whooping cough) — 3 ระยะ: catarrhal, paroxysmal (ไอเป็นชุด whooping sound), convalescent ในทารกอาจ apnea, หยุดหายใจ',
+    vector: 'แพร่ผ่านละอองฝอย ติดต่อสูงในเด็กที่ไม่ได้ฉีดวัคซีน',
+    additional: 'ป้องกัน: วัคซีน DTP/Tdap รักษา: Macrolide (Azithromycin, Erythromycin)'
+  },
+  {
+    id: 'legionella',
+    name: 'Legionella pneumophila',
+    thai: 'ลีจิโอเนลลา นิวโมฟิลา',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'แท่งเรียวแกรมลบ ติดสีย้อมแกรมไม่ดี มองดีกว่าด้วย silver stain เจริญใน BCYE agar (charcoal + cysteine) Intracellular ใน amoeba และ macrophage',
+    pathogenesis: 'Legionnaires\' disease — atypical pneumonia รุนแรง ไข้สูง ท้องเสีย hyponatremia, สับสน, Pontiac fever (รูปแบบเบา ไข้หวัดใหญ่)',
+    vector: 'แพร่ผ่านละอองน้ำ (aerosol) จากระบบทำความเย็น เครื่องพ่นความชื้น น้ำพุ น้ำในโรงแรม ไม่แพร่จากคนสู่คน',
+    additional: 'วินิจฉัย: Urinary antigen (serogroup 1) รักษา: Azithromycin, Levofloxacin'
+  },
+  {
+    id: 'proteus',
+    name: 'Proteus mirabilis',
+    thai: 'โพรเทียส มิราบิลิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:facultative'],
+    characteristics: 'แท่งแกรมลบ Highly motile (peritrichous flagella) Swarming motility บน agar เป็นวงคลื่น Urease positive (++++) ทำให้ปัสสาวะเป็นด่าง H2S positive',
+    pathogenesis: 'UTI โดยเฉพาะในผู้ใส่สายสวน, นิ่ว struvite (Mg-NH4-PO4) จาก urease ที่แตก urea เป็น ammonia, pyelonephritis',
+    vector: 'พบในลำไส้ ดิน น้ำ ติดเชื้อ ascending จากท่อปัสสาวะ',
+    additional: 'รักษา: TMP-SMX, Fluoroquinolones, Cephalosporins (ดื้อ Tetracycline, Nitrofurantoin โดยกำเนิด)'
+  },
+  {
+    id: 'shigella',
+    name: 'Shigella dysenteriae',
+    thai: 'ชิเกลลา ดิสเซนเทอเรีย',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:facultative'],
+    characteristics: 'แท่งแกรมลบ Non-motile, Non-lactose fermenter, Non-H2S producer ผลิต Shiga toxin (S. dysenteriae type 1) ทนกรดในกระเพาะ infectious dose ต่ำมาก (10–100 ตัว)',
+    pathogenesis: 'Shigellosis (bacillary dysentery) — ท้องเสียถ่ายเป็นมูกเลือด ปวดเบ่ง ไข้ ภาวะแทรกซ้อน HUS (hemolytic uremic syndrome), Reiter\'s syndrome',
+    vector: 'แพร่ทาง fecal-oral 4F: Food, Fingers, Feces, Flies คนเป็น reservoir เพียงอย่างเดียว',
+    additional: 'รักษา: Ciprofloxacin, Ceftriaxone, Azithromycin (ระวังเชื้อดื้อยาเพิ่มขึ้น)'
+  },
+  {
+    id: 'yersinia-pestis',
+    name: 'Yersinia pestis',
+    thai: 'เยอร์ซิเนีย เพสทิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:facultative'],
+    characteristics: 'แท่งสั้นแกรมลบ ย้อม bipolar คล้าย safety pin (Wayson stain) Non-motile, Non-lactose fermenter',
+    pathogenesis: 'กาฬโรค (Plague) — Bubonic plague: ต่อมน้ำเหลืองโตมาก (bubo) ปวดมาก, Pneumonic plague: ปอดบวมรุนแรง แพร่คนสู่คน, Septicemic plague: DIC, gangrene (Black Death)',
+    vector: 'หมัดหนู (rat flea, Xenopsylla cheopis) เป็นพาหะ จากหนูสู่คน, pneumonic แพร่ทางอากาศ',
+    additional: 'รักษา: Streptomycin (เลือกแรก), Doxycycline, Gentamicin ใช้เป็นอาวุธชีวภาพได้'
+  },
+  {
+    id: 'campylobacter',
+    name: 'Campylobacter jejuni',
+    thai: 'แคมไพโลแบคเตอร์ เจจูไน',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:spirillum', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'แท่งโค้งคล้ายปีกนกนางนวล (gull-wing/comma) แกรมลบ Microaerophilic, Thermophilic (เจริญที่ 42°C) Oxidase positive, Catalase positive',
+    pathogenesis: 'ท้องเสียจากแบคทีเรียที่พบบ่อยที่สุดในโลก ปวดท้องรุนแรงคล้ายไส้ติ่งอักเสบ ภาวะแทรกซ้อน: Guillain-Barré syndrome (autoimmune), reactive arthritis',
+    vector: 'อาหารดิบ/ปรุงไม่สุก โดยเฉพาะไก่ นมไม่พาสเจอร์ไรส์ น้ำปนเปื้อน สัตว์เลี้ยงเป็น reservoir',
+    additional: 'รักษา: Azithromycin (เลือกแรก), Ciprofloxacin (ระวังเชื้อดื้อยา) ส่วนใหญ่หายเอง'
+  },
+  {
+    id: 'brucella',
+    name: 'Brucella melitensis',
+    thai: 'บรูเซลลา เมลิเทนซิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'แท่งสั้นแกรมลบ (coccobacillus) Intracellular ใน macrophage Aerobic, Non-motile, ต้องการ CO2 เพาะเชื้อยากใช้เวลา 4–8 สัปดาห์',
+    pathogenesis: 'บรูเซลโลซิส (undulant fever) — ไข้ขึ้นๆ ลงๆ เหงื่อแตก ปวดข้อ ตับม้ามโต อาจเรื้อรังเป็นปี endocarditis, spondylitis, hepatic granuloma',
+    vector: 'นมแพะ/วัวไม่พาสเจอร์ไรส์ เนื้อสัตว์ดิบ สัมผัสสัตว์เลี้ยงโดยเกษตรกร/สัตวแพทย์',
+    additional: 'รักษา: Doxycycline + Rifampin (สูตรนาน 6 สัปดาห์) ใช้เป็นอาวุธชีวภาพได้'
+  },
+  {
+    id: 'pasteurella',
+    name: 'Pasteurella multocida',
+    thai: 'พาสเทอเรลลา มัลโทซิดา',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:facultative'],
+    characteristics: 'แท่งสั้นแกรมลบ (coccobacillus) ย้อม bipolar Catalase positive, Oxidase positive, Indole positive',
+    pathogenesis: 'Cellulitis ลุกลามเร็วหลังถูกแมว/สุนัขกัดหรือข่วน — บวมแดงปวดภายใน 24 ชม., osteomyelitis, septic arthritis, ปอดบวมในผู้มีโรคปอดเรื้อรัง',
+    vector: 'พบเป็น normal flora ในช่องปากของแมว สุนัข แพร่ผ่านการกัด/ข่วน',
+    additional: 'รักษา: Amoxicillin-clavulanate (เลือกแรก), Doxycycline ในผู้แพ้ Penicillin'
+  },
+  {
+    id: 'acinetobacter',
+    name: 'Acinetobacter baumannii',
+    thai: 'อะซิเนโทแบคเตอร์ บอมานนี',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'แท่งสั้นแกรมลบ (coccobacillus) Strict aerobe Non-motile Oxidase negative ทนต่อสภาพแวดล้อมและสารฆ่าเชื้อ',
+    pathogenesis: 'ติดเชื้อในโรงพยาบาล (HAP, VAP), wound infection, UTI, bacteremia, meningitis เชื้อดื้อยาหลายขนาน MDR/XDR/PDR เป็นปัญหารุนแรงใน ICU',
+    vector: 'พบในสภาพแวดล้อมโรงพยาบาล อุปกรณ์ทางการแพทย์ มือบุคลากร',
+    additional: 'รักษา: Carbapenem, Colistin, Tigecycline, Sulbactam (ตามผล sensitivity)'
+  },
+  {
+    id: 'burkholderia',
+    name: 'Burkholderia pseudomallei',
+    thai: 'เบิร์กโฮลเดอเรีย ซูโดมัลเลย์',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative', 'oxygen:aerobic'],
+    characteristics: 'แท่งแกรมลบ ย้อม bipolar คล้าย safety pin Oxidase positive Motile เจริญในดินและน้ำในเขตร้อน',
+    pathogenesis: 'เมลิออยโดสิส (Melioidosis) — โรคสำคัญในไทย โดยเฉพาะภาคอีสาน อาการหลากหลาย: pneumonia, abscess (ตับ ม้าม ต่อมลูกหมาก), septicemia, chronic osteomyelitis อัตราตายสูง',
+    vector: 'สัมผัสดินและน้ำที่ปนเปื้อนทางผิวหนังที่มีแผล หรือสูดหายใจ พบมากในชาวนาช่วงหน้าฝน',
+    additional: 'รักษา: Ceftazidime หรือ Meropenem (intensive 2 สัปดาห์) ตามด้วย TMP-SMX (eradication 12–20 สัปดาห์)'
+  },
+
+  // ---- Spirochete เพิ่มเติม ----
+  {
+    id: 'borrelia-burgdorferi',
+    name: 'Borrelia burgdorferi',
+    thai: 'บอร์รีเลีย เบิร์กดอร์เฟอรี',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:spirochete', 'gram:negative'],
+    characteristics: 'สไปโรคีตเรียวยาว ขดหลวมๆ มองด้วย dark-field microscopy หรือ Giemsa stain เพาะใน Barbour-Stoenner-Kelly (BSK) medium',
+    pathogenesis: 'Lyme disease 3 ระยะ — Stage 1: erythema migrans (ผื่นรูปเป้า), Stage 2: Bell\'s palsy, AV block, meningitis, Stage 3: chronic arthritis, neuroborreliosis',
+    vector: 'เห็บกวาง Ixodes scapularis (สหรัฐ), I. ricinus (ยุโรป) reservoir: หนู กวาง',
+    additional: 'รักษา: Doxycycline (ผู้ใหญ่), Amoxicillin (เด็ก/หญิงตั้งครรภ์), Ceftriaxone (neuro/cardiac)'
+  },
+  {
+    id: 'borrelia-recurrentis',
+    name: 'Borrelia recurrentis',
+    thai: 'บอร์รีเลีย รีเคอร์เรนทิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:spirochete', 'gram:negative'],
+    characteristics: 'สไปโรคีตขดหลวม มี antigenic variation ทำให้หลบภูมิคุ้มกัน เห็นใน thin/thick blood smear ขณะมีไข้',
+    pathogenesis: 'Relapsing fever — ไข้ขึ้นสูง 3–7 วัน สลับกับไม่มีไข้ 7–10 วัน เป็นรอบๆ จาก antigenic variation, hepatosplenomegaly, Jarisch-Herxheimer reaction หลังได้ยา',
+    vector: 'เหา (body louse, Pediculus humanus) สำหรับ epidemic relapsing fever, เห็บอ่อน Ornithodoros สำหรับ endemic',
+    additional: 'รักษา: Doxycycline, Erythromycin (single dose) ระวัง Jarisch-Herxheimer reaction'
+  },
+
+  // ---- Mycobacteria เพิ่มเติม ----
+  {
+    id: 'mycobacterium-leprae',
+    name: 'Mycobacterium leprae',
+    thai: 'มัยโคแบคทีเรียม เลเพร',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'oxygen:aerobic'],
+    characteristics: 'แท่ง acid-fast เพาะเลี้ยงในห้องปฏิบัติการไม่ได้ ขยายพันธุ์ในตัวนิ่ม (armadillo) และอุ้งเท้าหนู Obligate intracellular ใน macrophage และ Schwann cell ชอบอุณหภูมิเย็น',
+    pathogenesis: 'โรคเรื้อน (Leprosy/Hansen\'s disease) — Tuberculoid (TT): ผื่นน้อย ภูมิดี, Lepromatous (LL): ผื่นมาก leonine facies, claw hand, ชาที่ปลาย, ภูมิอ่อน',
+    vector: 'แพร่ผ่านละอองฝอย หรือสัมผัสใกล้ชิดเป็นเวลานาน ระยะฟักตัวนาน 2–10 ปี',
+    additional: 'วินิจฉัย: Ziehl-Neelsen smear, biopsy รักษา MDT: Dapsone + Rifampin (+ Clofazimine สำหรับ LL) นาน 6–24 เดือน'
+  },
+  {
+    id: 'mycobacterium-avium',
+    name: 'Mycobacterium avium complex',
+    thai: 'มัยโคแบคทีเรียม เอเวียม คอมเพล็กซ์',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'oxygen:aerobic'],
+    characteristics: 'แท่ง acid-fast (M. avium + M. intracellulare = MAC) Slow-growing Non-tuberculous mycobacterium พบในน้ำ ดิน ฝุ่น',
+    pathogenesis: 'Disseminated MAC ในผู้ป่วย AIDS (CD4 < 50): ไข้ น้ำหนักลด ท้องเสีย ตับม้ามโต, MAC pulmonary disease ในผู้สูงอายุที่มี COPD/bronchiectasis (Lady Windermere syndrome)',
+    vector: 'ไม่แพร่จากคนสู่คน ติดเชื้อจากสิ่งแวดล้อม (น้ำประปา ดิน)',
+    additional: 'รักษา: Clarithromycin/Azithromycin + Ethambutol + Rifabutin ป้องกันใน HIV ที่ CD4<50: Azithromycin'
+  },
+
+  // ---- Atypical bacteria ----
+  {
+    id: 'chlamydia-trachomatis',
+    name: 'Chlamydia trachomatis',
+    thai: 'คลามายเดีย ทราโคมาทิส',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:negative'],
+    characteristics: 'Obligate intracellular ผนังเซลล์ไม่มี peptidoglycan ปกติ มี 2 รูปแบบ: Elementary body (EB) ติดเชื้อ และ Reticulate body (RB) เพิ่มจำนวน',
+    pathogenesis: 'Serotype A-C: trachoma (ตาบอดในประเทศกำลังพัฒนา), D-K: STI — non-gonococcal urethritis, cervicitis, PID, Reiter syndrome, neonatal conjunctivitis/pneumonia, L1-L3: lymphogranuloma venereum (LGV)',
+    vector: 'STI ผ่าน sexual contact, แม่สู่ลูกขณะคลอด, แมลงวันแพร่ trachoma',
+    additional: 'รักษา: Azithromycin (single dose) หรือ Doxycycline 7 วัน รักษาคู่นอนด้วย'
+  },
+  {
+    id: 'chlamydia-pneumoniae',
+    name: 'Chlamydia pneumoniae',
+    thai: 'คลามายเดีย นิวโมเนีย',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:negative'],
+    characteristics: 'Obligate intracellular มี EB รูปลูกแพร์ (pear-shaped) ต่างจาก C. trachomatis ที่กลม',
+    pathogenesis: 'Atypical pneumonia (walking pneumonia) ในวัยรุ่น/ผู้ใหญ่หนุ่มสาว, bronchitis, sinusitis, pharyngitis อาจเกี่ยวข้องกับ atherosclerosis',
+    vector: 'แพร่ผ่านละอองฝอยทางเดินหายใจ',
+    additional: 'รักษา: Azithromycin, Doxycycline, Levofloxacin'
+  },
+  {
+    id: 'mycoplasma',
+    name: 'Mycoplasma pneumoniae',
+    thai: 'มัยโคพลาสมา นิวโมเนีย',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus'],
+    characteristics: 'แบคทีเรียที่เล็กที่สุด ไม่มีผนังเซลล์ (no peptidoglycan) จึงดื้อ Penicillin/Cephalosporins โดยกำเนิด มี cholesterol ในเยื่อหุ้มเซลล์ เพาะใน Eaton\'s agar เกิด "fried egg" colony',
+    pathogenesis: 'Walking pneumonia (atypical pneumonia) ในเด็กโต/วัยรุ่น อาการเบาแต่ X-ray ผิดปกติมาก, tracheobronchitis, bullous myringitis, cold agglutinin (IgM)',
+    vector: 'แพร่ผ่านละอองฝอย ระบาดในชุมชนปิด เช่น โรงเรียน ทหาร',
+    additional: 'รักษา: Macrolides (Azithromycin), Doxycycline, Fluoroquinolones'
+  },
+  {
+    id: 'rickettsia',
+    name: 'Rickettsia / Orientia tsutsugamushi',
+    thai: 'ริกเก็ตเซีย / โอเรียนเทีย ซึซึกามูชิ',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:coccus', 'gram:negative'],
+    characteristics: 'Obligate intracellular ติดสีแกรมลบไม่ดี ใช้ Giemsa หรือ Gimenez stain เจริญใน endothelial cell',
+    pathogenesis: 'Scrub typhus (O. tsutsugamushi) สำคัญในไทย/เอเชีย — ไข้สูง ปวดศีรษะ eschar (แผลดำรอยไรกัด) ผื่น ต่อมน้ำเหลืองโต, Rocky Mountain spotted fever (R. rickettsii), epidemic typhus (R. prowazekii)',
+    vector: 'ตัวอ่อนไรอ่อน (chigger, Leptotrombidium) สำหรับ scrub typhus, เห็บสำหรับ RMSF, เหาสำหรับ epidemic typhus',
+    additional: 'วินิจฉัย: Weil-Felix test (เก่า), IFA, PCR รักษา: Doxycycline (เลือกแรก)'
+  },
+  {
+    id: 'coxiella',
+    name: 'Coxiella burnetii',
+    thai: 'ค็อกเซียลลา เบอร์เนทิอาย',
+    kingdom: 'bacteria',
+    icon: '🦠',
+    categories: ['shape:bacillus', 'gram:negative'],
+    characteristics: 'Obligate intracellular แท่งสั้นแกรมลบ มี 2 รูปแบบ: small cell variant (ทนสภาพแวดล้อมคล้ายสปอร์) และ large cell variant ทนความร้อน ฆ่าด้วยพาสเจอร์ไรซ์ได้',
+    pathogenesis: 'Q fever — Acute: ไข้สูง ปวดศีรษะ atypical pneumonia, hepatitis (granuloma รูปโดนัท), Chronic: culture-negative endocarditis (พบ 1–5 ปีหลังติดเชื้อ)',
+    vector: 'สูดหายใจฝุ่นที่ปนเปื้อนสารคัดหลั่งจากสัตว์ (วัว แพะ แกะ) โดยเฉพาะรกตอนคลอด ติดต่อง่ายมาก ใช้ infectious dose ต่ำ',
+    additional: 'รักษา acute: Doxycycline, chronic: Doxycycline + Hydroxychloroquine นาน 18 เดือน–4 ปี'
+  },
+
   // ============ VIRUS ============
   {
     id: 'hiv',
@@ -303,6 +725,304 @@ const MICROBES = [
     pathogenesis: 'โรคพิษสุนัขบ้า (Rabies) — encephalitis เฉียบพลัน กลัวน้ำ (hydrophobia), กลืนลำบาก, agitation พบ Negri bodies ในเซลล์ประสาท เสียชีวิต ~100% เมื่อมีอาการ',
     vector: 'การกัดหรือข่วนของสัตว์เลี้ยงลูกด้วยนมที่ติดเชื้อ (สุนัข แมว ค้างคาว) ผ่านน้ำลาย',
     additional: 'ป้องกัน: ล้างแผล + Rabies immunoglobulin + วัคซีน (post-exposure prophylaxis ทันที)'
+  },
+
+  // ---- DNA Virus เพิ่มเติม ----
+  {
+    id: 'adenovirus',
+    name: 'Adenovirus',
+    thai: 'อะดีโนไวรัส',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:dna', 'envelope:naked'],
+    characteristics: 'dsDNA สายตรง ไม่มีเยื่อหุ้ม Capsid icosahedral มี fiber ยื่นออกมาที่มุม (penton fiber) มีกว่า 50 serotypes',
+    pathogenesis: 'หวัด ไข้สูง คออักเสบ (pharyngoconjunctival fever), pneumonia ในเด็กและทหาร, gastroenteritis (serotype 40, 41), epidemic keratoconjunctivitis (pink eye), hemorrhagic cystitis',
+    vector: 'แพร่ผ่านละอองฝอย, fecal-oral, น้ำในสระว่ายน้ำ',
+    additional: 'ไม่มียาต้านไวรัสเฉพาะ มีวัคซีนใช้ในกองทัพสหรัฐ (serotype 4, 7)'
+  },
+  {
+    id: 'vzv',
+    name: 'Varicella-Zoster Virus (VZV)',
+    thai: 'ไวรัสอีสุกอีใส-งูสวัด',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:dna', 'envelope:enveloped'],
+    characteristics: 'Herpesvirus (HHV-3) dsDNA มีเยื่อหุ้ม ซ่อนตัวใน dorsal root ganglia (latency)',
+    pathogenesis: 'อีสุกอีใส (Chickenpox) — ตุ่มน้ำใสกระจายทั่วตัว คันมาก แต่ละตุ่มอยู่คนละระยะ "dew drop on rose petal", งูสวัด (Shingles/Herpes zoster) — กลับมาเป็นซ้ำตามแนว dermatome ปวดมาก, post-herpetic neuralgia',
+    vector: 'แพร่ผ่านละอองฝอยและสัมผัสตุ่มน้ำ ติดต่อง่ายมาก',
+    additional: 'ป้องกัน: วัคซีน Varicella, Shingrix (ผู้สูงอายุ) รักษา: Acyclovir, Valacyclovir'
+  },
+  {
+    id: 'ebv',
+    name: 'Epstein-Barr Virus (EBV)',
+    thai: 'ไวรัสเอพสไตน์-บาร์',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:dna', 'envelope:enveloped'],
+    characteristics: 'Herpesvirus (HHV-4) dsDNA มีเยื่อหุ้ม เข้าเซลล์ B lymphocyte ผ่าน CD21 receptor ทำให้เซลล์เป็น lymphoblast',
+    pathogenesis: 'Infectious mononucleosis (kissing disease) — ไข้ คออักเสบ ต่อมน้ำเหลืองโต ม้ามโต atypical lymphocytes (Downey cells), Burkitt lymphoma, nasopharyngeal carcinoma (พบมากในเอเชีย), Hodgkin lymphoma, oral hairy leukoplakia ใน HIV',
+    vector: 'แพร่ทางน้ำลาย (kissing, แชร์แก้วน้ำ)',
+    additional: 'วินิจฉัย: Heterophile antibody (Monospot test), EBV-specific antibodies (VCA, EBNA) ไม่มียาต้านไวรัสเฉพาะ'
+  },
+  {
+    id: 'cmv',
+    name: 'Cytomegalovirus (CMV)',
+    thai: 'ไซโตเมกาโลไวรัส',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:dna', 'envelope:enveloped'],
+    characteristics: 'Herpesvirus (HHV-5) dsDNA ขนาดใหญ่ที่สุดในกลุ่ม herpes มีเยื่อหุ้ม ทำให้เซลล์โต (cytomegaly) เห็น "owl\'s eye" inclusion body',
+    pathogenesis: 'ในคนปกติ: mononucleosis-like (Monospot negative), ในผู้ภูมิคุ้มกันบกพร่อง (HIV, transplant): retinitis (ตาบอด), pneumonia, esophagitis, colitis, Congenital CMV: หูหนวก, microcephaly, hepatosplenomegaly, periventricular calcification',
+    vector: 'แพร่ผ่านน้ำลาย ปัสสาวะ น้ำนม เลือด อวัยวะปลูกถ่าย sexual contact, แม่สู่ลูกผ่านรก',
+    additional: 'รักษา: Ganciclovir, Valganciclovir, Foscarnet, Cidofovir'
+  },
+  {
+    id: 'parvovirus',
+    name: 'Parvovirus B19',
+    thai: 'พาร์โวไวรัส บี19',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:dna', 'envelope:naked'],
+    characteristics: 'ไวรัสที่เล็กที่สุด (parvo = small) ssDNA ไม่มีเยื่อหุ้ม เข้าเซลล์ผ่าน P antigen บน erythroid progenitor',
+    pathogenesis: 'Erythema infectiosum (Fifth disease) — ผื่นแก้มแดง "slapped cheek" ในเด็ก, aplastic crisis ในผู้ป่วย sickle cell, hydrops fetalis ถ้าแม่ตั้งครรภ์ติดเชื้อ, arthritis ในผู้ใหญ่',
+    vector: 'แพร่ผ่านละอองฝอยทางเดินหายใจ และจากแม่สู่ลูก',
+    additional: 'ส่วนใหญ่หายได้เอง รักษา aplastic crisis: IVIG, การให้เลือด'
+  },
+  {
+    id: 'mpox',
+    name: 'Monkeypox virus (Mpox)',
+    thai: 'ไวรัสฝีดาษลิง',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:dna', 'envelope:enveloped'],
+    characteristics: 'Poxvirus (Orthopoxvirus) dsDNA ขนาดใหญ่ที่สุด (200–300 nm) มีเยื่อหุ้ม ขยายพันธุ์ใน cytoplasm (ต่างจาก DNA virus อื่น)',
+    pathogenesis: 'Mpox — ไข้ ปวดเมื่อย ต่อมน้ำเหลืองโต ตามด้วยตุ่มน้ำกลายเป็นตุ่มหนอง ครบรอบใน 2–4 สัปดาห์ ระบาดทั่วโลก 2022 (clade IIb), clade I (แอฟริกากลาง) รุนแรงกว่า',
+    vector: 'แพร่จากสัตว์ฟันแทะ ลิง ผ่านการสัมผัสใกล้ชิด รอยกัด ตุ่มหนอง สารคัดหลั่ง รวมถึง sexual contact',
+    additional: 'ป้องกัน: วัคซีน JYNNEOS (smallpox vaccine ก็ป้องกันได้) รักษา: Tecovirimat (TPOXX)'
+  },
+
+  // ---- RNA Virus (Hepatitis เพิ่มเติม) ----
+  {
+    id: 'hepatitis-a',
+    name: 'Hepatitis A Virus',
+    thai: 'ไวรัสตับอักเสบเอ',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:naked'],
+    characteristics: 'Picornavirus, ssRNA positive-sense ไม่มีเยื่อหุ้ม ทนกรดและความร้อน',
+    pathogenesis: 'ตับอักเสบเฉียบพลัน (acute hepatitis) — ไข้ ตัวเหลือง คลื่นไส้ ไม่เป็นเรื้อรัง ไม่ก่อมะเร็งตับ ระยะฟักตัว 2–6 สัปดาห์',
+    vector: 'แพร่ทาง fecal-oral อาหารและน้ำปนเปื้อน โดยเฉพาะหอย ผักดิบ',
+    additional: 'ป้องกัน: วัคซีน HAV (2 เข็ม) รักษา: ประคับประคอง'
+  },
+  {
+    id: 'hepatitis-c',
+    name: 'Hepatitis C Virus',
+    thai: 'ไวรัสตับอักเสบซี',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Flavivirus (Hepacivirus) ssRNA positive-sense มีเยื่อหุ้ม มี 6 genotypes กลายพันธุ์เร็ว ทำให้ยังไม่มีวัคซีน',
+    pathogenesis: 'ตับอักเสบเรื้อรัง (chronic ใน 80%), cirrhosis, hepatocellular carcinoma, cryoglobulinemia, membranoproliferative glomerulonephritis',
+    vector: 'แพร่ทางเลือดเป็นหลัก — เข็มฉีดยา ถ่ายเลือด รอยสัก จากแม่สู่ลูก (น้อย), sexual contact (น้อย)',
+    additional: 'วินิจฉัย: anti-HCV antibody, HCV RNA รักษา: DAA (Sofosbuvir + Ledipasvir) หายขาดได้ >95%'
+  },
+  {
+    id: 'hepatitis-e',
+    name: 'Hepatitis E Virus',
+    thai: 'ไวรัสตับอักเสบอี',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:naked'],
+    characteristics: 'Hepevirus, ssRNA positive-sense ไม่มีเยื่อหุ้ม',
+    pathogenesis: 'ตับอักเสบเฉียบพลัน ส่วนใหญ่หายเอง แต่ในหญิงตั้งครรภ์ (โดยเฉพาะไตรมาส 3) อาจเป็น fulminant hepatitis อัตราตาย 20%',
+    vector: 'แพร่ทาง fecal-oral น้ำดื่มปนเปื้อน เนื้อหมู กวางที่ปรุงไม่สุก',
+    additional: 'ไม่มียารักษาเฉพาะ มีวัคซีนใช้ในจีน (Hecolin)'
+  },
+
+  // ---- Picornaviruses เพิ่มเติม ----
+  {
+    id: 'poliovirus',
+    name: 'Poliovirus',
+    thai: 'โปลิโอไวรัส',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:naked'],
+    characteristics: 'Picornavirus (Enterovirus) ssRNA positive-sense ไม่มีเยื่อหุ้ม มี 3 serotypes (PV1, PV2, PV3) ทนกรดในกระเพาะ',
+    pathogenesis: 'Poliomyelitis — 95% ไม่มีอาการ, abortive: ไข้หวัด, non-paralytic: aseptic meningitis, paralytic (1%): ทำลาย anterior horn cell ของไขสันหลัง อัมพาตแบบ flaccid asymmetric, post-polio syndrome',
+    vector: 'แพร่ทาง fecal-oral น้ำและอาหารปนเปื้อน',
+    additional: 'ป้องกัน: วัคซีน OPV (Sabin, live oral) และ IPV (Salk, inactivated) เป้าหมายกำจัดโรคทั่วโลก (eradication)'
+  },
+  {
+    id: 'coxsackievirus',
+    name: 'Coxsackievirus / Enterovirus 71',
+    thai: 'ค็อกซากีไวรัส / เอนเทอโรไวรัส 71',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:naked'],
+    characteristics: 'Picornavirus (Enterovirus) ssRNA positive-sense ไม่มีเยื่อหุ้ม Coxsackie A และ B แตกต่างที่ลักษณะการก่อโรคในหนูทดลอง',
+    pathogenesis: 'Hand-Foot-Mouth Disease (HFMD) — ตุ่มน้ำที่มือ เท้า ปาก ระบาดในเด็กเล็ก (CV-A16, EV-71), Herpangina (ตุ่มน้ำในคอ), Myocarditis, Pericarditis (CV-B), Aseptic meningitis, EV-71 อาจรุนแรงเป็น brainstem encephalitis',
+    vector: 'แพร่ทาง fecal-oral, ละอองฝอย, สัมผัสตุ่มน้ำ',
+    additional: 'รักษาประคับประคอง EV-71 มีวัคซีนในจีน'
+  },
+  {
+    id: 'rhinovirus',
+    name: 'Rhinovirus',
+    thai: 'ไรโนไวรัส',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:naked'],
+    characteristics: 'Picornavirus, ssRNA positive-sense ไม่มีเยื่อหุ้ม มีกว่า 100 serotypes ไม่ทนกรด เจริญดีที่ 33°C (อุณหภูมิจมูก)',
+    pathogenesis: 'หวัด (common cold) สาเหตุที่พบบ่อยที่สุด — น้ำมูกใส คัดจมูก จาม ไอ ไม่มีไข้สูง อาจกระตุ้น asthma exacerbation, COPD',
+    vector: 'แพร่ผ่านละอองฝอย และสัมผัสมือ-จมูก-ตา',
+    additional: 'ไม่มียาต้านไวรัสเฉพาะ ไม่มีวัคซีน (สายพันธุ์เยอะเกินไป)'
+  },
+
+  // ---- Flaviviruses (arbovirus) เพิ่มเติม ----
+  {
+    id: 'yellow-fever',
+    name: 'Yellow Fever Virus',
+    thai: 'ไวรัสไข้เหลือง',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Flavivirus, ssRNA positive-sense มีเยื่อหุ้ม',
+    pathogenesis: 'ไข้เหลือง (Yellow fever) — 3 ระยะ: infection (ไข้สูง ปวดเมื่อย), remission (สบายขึ้น 24 ชม.), intoxication (ตัวเหลือง อาเจียนเป็นเลือด ตับวาย ไตวาย DIC) อัตราตายสูง',
+    vector: 'ยุง Aedes aegypti (urban cycle), Haemagogus (jungle cycle) พบในแอฟริกา อเมริกาใต้',
+    additional: 'ป้องกัน: วัคซีน YF-17D (live attenuated) ภูมิคุ้มกันตลอดชีวิต ต้องฉีดก่อนเดินทางไปประเทศเสี่ยง'
+  },
+  {
+    id: 'zika',
+    name: 'Zika Virus',
+    thai: 'ไวรัสซิกา',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Flavivirus, ssRNA positive-sense มีเยื่อหุ้ม',
+    pathogenesis: 'ส่วนใหญ่ไม่มีอาการหรือเบา — ไข้ต่ำ ผื่น ปวดข้อ เยื่อบุตาอักเสบ ภาวะแทรกซ้อนสำคัญ: Congenital Zika syndrome (microcephaly, brain calcification ในทารก), Guillain-Barré syndrome',
+    vector: 'ยุงลาย Aedes aegypti, ติดต่อทางเพศสัมพันธ์ จากแม่สู่ลูกผ่านรก',
+    additional: 'ไม่มียารักษาเฉพาะ หญิงตั้งครรภ์หรือวางแผนตั้งครรภ์ควรหลีกเลี่ยงพื้นที่ระบาด'
+  },
+  {
+    id: 'jev',
+    name: 'Japanese Encephalitis Virus',
+    thai: 'ไวรัสไข้สมองอักเสบเจอี',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Flavivirus, ssRNA positive-sense มีเยื่อหุ้ม สำคัญในเอเชียและไทย',
+    pathogenesis: 'Japanese encephalitis — ส่วนใหญ่ไม่มีอาการ ใน 1% เกิด encephalitis ไข้สูง ชัก ซึม โคม่า อัมพาต อัตราตาย 20–30% ผู้รอดชีวิตมีความพิการทางระบบประสาท',
+    vector: 'ยุงรำคาญ Culex tritaeniorhynchus (กัดตอนเย็น-กลางคืน) reservoir: หมู นกเป็ด',
+    additional: 'ป้องกัน: วัคซีน JE (live attenuated SA14-14-2 หรือ inactivated) บรรจุในแผน EPI ของไทย'
+  },
+  {
+    id: 'chikungunya',
+    name: 'Chikungunya Virus',
+    thai: 'ไวรัสชิคุนกุนยา',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Togavirus (Alphavirus) ssRNA positive-sense มีเยื่อหุ้ม',
+    pathogenesis: 'ไข้ปวดข้อยุงลาย (Chikungunya) — ไข้สูงเฉียบพลัน ปวดข้อรุนแรงโดยเฉพาะข้อมือและข้อเข่า อาจเรื้อรังเป็นเดือน-ปี ผื่น maculopapular ชื่อ "chikungunya" = ทำให้ตัวงอ (โค้งตัวจากปวด)',
+    vector: 'ยุงลาย Aedes aegypti, A. albopictus',
+    additional: 'รักษาประคับประคอง ห้าม NSAIDs/Aspirin จนกว่าจะแยกจาก dengue ได้'
+  },
+
+  // ---- Paramyxoviruses & RNA negative-sense ----
+  {
+    id: 'measles',
+    name: 'Measles virus (Rubeola)',
+    thai: 'ไวรัสหัด',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Paramyxovirus (Morbillivirus) ssRNA negative-sense มีเยื่อหุ้ม มี HN (hemagglutinin) และ F (fusion) protein',
+    pathogenesis: 'หัด (Measles) — 3C\'s: Cough, Coryza, Conjunctivitis + Koplik spots (จุดขาวในกระพุ้งแก้ม) ตามด้วยผื่น maculopapular เริ่มจากใบหน้า, ภาวะแทรกซ้อน: pneumonia, encephalitis, SSPE (subacute sclerosing panencephalitis)',
+    vector: 'แพร่ผ่านละอองฝอย ติดต่อง่ายมาก (R0 = 12–18)',
+    additional: 'ป้องกัน: วัคซีน MMR รักษา: ประคับประคอง + Vitamin A'
+  },
+  {
+    id: 'mumps',
+    name: 'Mumps virus',
+    thai: 'ไวรัสคางทูม',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Paramyxovirus (Rubulavirus) ssRNA negative-sense มีเยื่อหุ้ม',
+    pathogenesis: 'คางทูม (Mumps) — ต่อมน้ำลายข้างหู (parotid) บวมข้างเดียวหรือสองข้าง, ภาวะแทรกซ้อน: orchitis (ลูกอัณฑะอักเสบในวัยรุ่นชาย, อาจหมัน), oophoritis, meningitis, deafness, pancreatitis',
+    vector: 'แพร่ผ่านละอองฝอย และน้ำลาย',
+    additional: 'ป้องกัน: วัคซีน MMR'
+  },
+  {
+    id: 'rubella',
+    name: 'Rubella virus (German measles)',
+    thai: 'ไวรัสหัดเยอรมัน',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Togavirus (Rubivirus) ssRNA positive-sense มีเยื่อหุ้ม',
+    pathogenesis: 'หัดเยอรมัน — ผื่นเริ่มจากใบหน้าลงล่าง ต่อมน้ำเหลืองหลังหูโต ไข้ต่ำ อาการเบาในเด็ก/ผู้ใหญ่, Congenital Rubella Syndrome (CRS): ต้อกระจก หูหนวก โรคหัวใจพิการแต่กำเนิด (PDA) ถ้าแม่ติดเชื้อในไตรมาสแรก',
+    vector: 'แพร่ผ่านละอองฝอย และจากแม่สู่ลูกผ่านรก',
+    additional: 'ป้องกัน: วัคซีน MMR (ห้ามฉีดในหญิงตั้งครรภ์)'
+  },
+  {
+    id: 'rsv',
+    name: 'Respiratory Syncytial Virus (RSV)',
+    thai: 'ไวรัสอาร์เอสวี',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Pneumovirus, ssRNA negative-sense มีเยื่อหุ้ม ทำให้เซลล์รวมตัวเป็น syncytium (multinucleated giant cell)',
+    pathogenesis: 'หลอดลมฝอยอักเสบ (bronchiolitis) ในเด็กอายุ <2 ปี — ไอ หายใจเสียงวี้ด หายใจเร็ว, pneumonia, สาเหตุหลักของการเข้าโรงพยาบาลในทารก, exacerbation ของ COPD ในผู้สูงอายุ',
+    vector: 'แพร่ผ่านละอองฝอยและการสัมผัส',
+    additional: 'ป้องกัน: Palivizumab (mAb) ในทารกเสี่ยงสูง, วัคซีน RSV ใหม่สำหรับผู้สูงอายุและหญิงตั้งครรภ์ รักษา: ประคับประคอง'
+  },
+  {
+    id: 'ebola',
+    name: 'Ebola virus',
+    thai: 'ไวรัสอีโบลา',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Filovirus, ssRNA negative-sense มีเยื่อหุ้ม รูปร่างเส้นใยยาว (filamentous) BSL-4 pathogen',
+    pathogenesis: 'Ebola virus disease (EVD/hemorrhagic fever) — ไข้สูง ปวดเมื่อย ท้องเสีย อาเจียน เลือดออกหลายอวัยวะ DIC, multi-organ failure อัตราตาย 25–90%',
+    vector: 'สัมผัสสารคัดหลั่ง (เลือด อุจจาระ อาเจียน) ของผู้ป่วยหรือศพ reservoir: ค้างคาวผลไม้',
+    additional: 'ป้องกัน: วัคซีน Ervebo (rVSV-ZEBOV) รักษา: Inmazeb, Ebanga (mAb cocktail), ประคับประคอง'
+  },
+  {
+    id: 'hantavirus',
+    name: 'Hantavirus',
+    thai: 'ฮันตาไวรัส',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Bunyavirus, ssRNA negative-sense (3 segments) มีเยื่อหุ้ม',
+    pathogenesis: 'Hantavirus Pulmonary Syndrome (HPS) — ไข้ ปวดเมื่อย ตามด้วย pulmonary edema, ARDS, ช็อก อัตราตาย 35%, Hemorrhagic Fever with Renal Syndrome (HFRS) — ไข้ ไตวาย เลือดออก',
+    vector: 'สูดหายใจฝุ่นที่ปนเปื้อนปัสสาวะ/อุจจาระ/น้ำลายของหนู (ไม่แพร่จากคนสู่คน)',
+    additional: 'รักษาประคับประคอง Ribavirin อาจช่วยใน HFRS'
+  },
+  {
+    id: 'htlv',
+    name: 'Human T-lymphotropic Virus (HTLV-1)',
+    thai: 'ไวรัสเอชทีแอลวี-1',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Retrovirus (Deltaretrovirus) ssRNA สองเส้น มี reverse transcriptase มีเยื่อหุ้ม integrate เข้า genome ของ T cells',
+    pathogenesis: 'Adult T-cell leukemia/lymphoma (ATLL) — เซลล์ลิวคีเมียมี nucleus รูปดอกไม้ "flower cells", HTLV-1 associated myelopathy (HAM/TSP) — อ่อนแรงขาทั้งสองข้างเรื้อรัง',
+    vector: 'แพร่ผ่านเลือด เข็มฉีดยา sexual contact น้ำนม (แม่สู่ลูกผ่านการให้นม)',
+    additional: 'ระยะแฝงนาน 20–60 ปี ไม่มีวัคซีน ไม่มียารักษาเฉพาะ'
+  },
+  {
+    id: 'hepatitis-d',
+    name: 'Hepatitis D Virus (Delta)',
+    thai: 'ไวรัสตับอักเสบดี',
+    kingdom: 'virus',
+    icon: '🧬',
+    categories: ['genetic:rna', 'envelope:enveloped'],
+    characteristics: 'Defective virus — ssRNA วงกลม ต้องการ HBsAg ของ HBV เป็นเปลือก ติดเชื้อได้เฉพาะคนที่มี HBV ร่วมด้วยเท่านั้น',
+    pathogenesis: 'Coinfection (HBV + HDV พร้อมกัน): acute hepatitis รุนแรงกว่า HBV เดี่ยว, Superinfection (HDV ในคนที่เป็น HBV เรื้อรัง): chronic hepatitis รุนแรง cirrhosis เร็วขึ้น',
+    vector: 'แพร่ทางเลือดและ sexual contact เหมือน HBV',
+    additional: 'ป้องกัน: วัคซีน HBV ป้องกัน HDV ได้ด้วย รักษา: Pegylated interferon-alpha, Bulevirtide (ใหม่)'
   },
 
   // ============ PARASITES ============
@@ -450,6 +1170,304 @@ const MICROBES = [
     additional: 'รักษา: Permethrin 1% shampoo, Malathion lotion, หวีสางไข่ (nit comb), ทำซ้ำที่ 7–10 วัน'
   },
 ];
+
+  // ---- Protozoa เพิ่มเติม ----
+  {
+    id: 'plasmodium-vivax',
+    name: 'Plasmodium vivax',
+    thai: 'พลาสโมเดียม ไวแว็กซ์',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Apicomplexan, intracellular ใน RBC อ่อน (reticulocyte) มี Schüffner\'s dots ในเซลล์ ระยะ trophozoite รูป amoeboid มี hypnozoite ในตับ (dormant)',
+    pathogenesis: 'มาลาเรียชนิดไม่รุนแรง (benign tertian) — ไข้ทุก 48 ชม. หนาวสั่น เหงื่อแตก ม้ามโต กลับมาเป็นซ้ำ (relapse) จาก hypnozoite ในตับ',
+    vector: 'ยุงก้นปล่อง Anopheles เพศเมีย พบในเอเชียใต้ เอเชียตะวันออกเฉียงใต้ (รวมไทย) อเมริกาใต้',
+    additional: 'รักษา: Chloroquine + Primaquine (กำจัด hypnozoite) ต้องตรวจ G6PD ก่อนให้ Primaquine'
+  },
+  {
+    id: 'trypanosoma-cruzi',
+    name: 'Trypanosoma cruzi',
+    thai: 'ทริปาโนโซมา ครูไซ',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Flagellated protozoa มี kinetoplast ระยะ trypomastigote ในเลือด รูปตัว C/U, amastigote ในเซลล์',
+    pathogenesis: 'Chagas disease — Acute: Romaña\'s sign (ตาบวมข้างเดียว), Chronic (10–30 ปีต่อมา): cardiomyopathy (heart failure, arrhythmia), megaesophagus, megacolon',
+    vector: 'แมลงดูดเลือด "kissing bug" (Triatoma) ปล่อยอุจจาระมีเชื้อ คนเกาเข้าแผลเข้าตา พบในอเมริกากลาง-ใต้',
+    additional: 'รักษา: Benznidazole, Nifurtimox (ระยะ acute และ chronic ระยะแรก)'
+  },
+  {
+    id: 'trypanosoma-brucei',
+    name: 'Trypanosoma brucei',
+    thai: 'ทริปาโนโซมา บรูซีอาย',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Flagellated protozoa มี kinetoplast และ undulating membrane มี Variable Surface Glycoprotein (VSG) เปลี่ยน antigen หลบภูมิคุ้มกัน',
+    pathogenesis: 'African sleeping sickness (Trypanosomiasis) — Stage 1 (hemolymphatic): ไข้ ปวดศีรษะ Winterbottom\'s sign (ต่อมน้ำเหลืองหลังคอโต), Stage 2 (CNS): ง่วงซึม สับสน โคม่า เสียชีวิต',
+    vector: 'แมลงเซตเซ (Tsetse fly, Glossina) พบในแอฟริกาใต้ทะเลทรายซาฮารา',
+    additional: 'รักษา: Suramin/Pentamidine (Stage 1), Melarsoprol/Eflornithine (Stage 2)'
+  },
+  {
+    id: 'leishmania',
+    name: 'Leishmania donovani',
+    thai: 'ลีชมาเนีย โดโนวานี',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Flagellated protozoa มี 2 รูปแบบ: promastigote (มี flagellum, ในแมลง), amastigote (ไม่มี flagellum, ในเซลล์ macrophage ของคน)',
+    pathogenesis: 'Visceral leishmaniasis (Kala-azar) — ไข้ ตับม้ามโตมาก น้ำหนักลด pancytopenia, Cutaneous leishmaniasis: แผลเรื้อรัง, Mucocutaneous: ทำลายจมูก ปาก ใบหน้า',
+    vector: 'ริ้นทราย (Sandfly, Phlebotomus/Lutzomyia) พบในแอฟริกา ตะวันออกกลาง อินเดีย อเมริกาใต้',
+    additional: 'รักษา: Liposomal Amphotericin B (เลือกแรก), Sodium stibogluconate, Miltefosine'
+  },
+  {
+    id: 'trichomonas',
+    name: 'Trichomonas vaginalis',
+    thai: 'ทริโคโมแนส วาจินาลิส',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Flagellated protozoa รูปลูกแพร์ มี 4 flagella อิสระ + 1 ที่เป็น undulating membrane เคลื่อนที่กระตุก ไม่มีระยะ cyst (มีแค่ trophozoite)',
+    pathogenesis: 'Trichomoniasis (STI) — ในผู้หญิง: ตกขาวเป็นฟองเหลืองเขียว เหม็น คันช่องคลอด strawberry cervix, ในผู้ชาย: ส่วนใหญ่ไม่มีอาการ urethritis',
+    vector: 'แพร่ผ่าน sexual contact',
+    additional: 'วินิจฉัย: wet mount, NAAT รักษา: Metronidazole หรือ Tinidazole (single dose) รักษาคู่นอนด้วย'
+  },
+  {
+    id: 'cryptosporidium',
+    name: 'Cryptosporidium parvum',
+    thai: 'คริปโตสปอริเดียม พาร์วุม',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Apicomplexan, intracellular oocyst ขนาดเล็ก 4–6 µm ทนต่อ chlorine ในน้ำประปา ย้อมด้วย acid-fast stain (modified Ziehl-Neelsen)',
+    pathogenesis: 'Cryptosporidiosis — ท้องเสียเป็นน้ำในผู้ภูมิคุ้มกันบกพร่อง (โดยเฉพาะ AIDS, CD4 < 100) อาจรุนแรงเรื้อรัง น้ำหนักลด, ในคนปกติ: ท้องเสียเฉียบพลัน หายเอง',
+    vector: 'แพร่ทางน้ำดื่มและน้ำในสระว่ายน้ำที่ปนเปื้อน oocyst, สัตว์เลี้ยง (ลูกวัว) เป็น reservoir',
+    additional: 'รักษา: Nitazoxanide (ในคนปกติ), ใน HIV: ART เพื่อฟื้นฟูภูมิ'
+  },
+  {
+    id: 'naegleria',
+    name: 'Naegleria fowleri',
+    thai: 'เนเกลเรีย ฟาวเลอรี',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Free-living amoeba มี 3 ระยะ: trophozoite (amoeboid), flagellate (มี flagella ชั่วคราว), cyst เจริญในน้ำอุ่น 25–40°C',
+    pathogenesis: 'Primary Amoebic Meningoencephalitis (PAM) — "brain-eating amoeba" เข้าทาง cribriform plate ผ่านจมูก ทำลายสมอง ปวดศีรษะรุนแรง ไข้ คอแข็ง โคม่า เสียชีวิตใน 1–2 สัปดาห์ อัตราตาย >97%',
+    vector: 'น้ำอุ่นในธรรมชาติ (สระน้ำพุร้อน ทะเลสาบ) เข้าทางจมูกขณะดำน้ำ ล้างจมูก',
+    additional: 'รักษา: Amphotericin B + Miltefosine + Azithromycin + Fluconazole + Rifampin (combination, ผลไม่ดี)'
+  },
+  {
+    id: 'babesia',
+    name: 'Babesia microti',
+    thai: 'บาเบเซีย ไมโครไท',
+    kingdom: 'parasite',
+    icon: '🪲',
+    categories: ['type:protozoa'],
+    characteristics: 'Apicomplexan, intracellular ใน RBC คล้าย Plasmodium แต่ไม่มี hemozoin pigment เห็น "Maltese cross" (4 merozoites)',
+    pathogenesis: 'Babesiosis — คล้ายมาลาเรีย: ไข้ หนาวสั่น hemolytic anemia รุนแรงในผู้ตัดม้าม ผู้สูงอายุ HIV',
+    vector: 'เห็บ Ixodes scapularis (เห็บเดียวกับ Lyme disease) reservoir: หนู กวาง',
+    additional: 'รักษา: Atovaquone + Azithromycin (mild), Quinine + Clindamycin (severe), อาจต้อง exchange transfusion'
+  },
+
+  // ---- Nematodes เพิ่มเติม (พยาธิตัวกลม) ----
+  {
+    id: 'trichuris',
+    name: 'Trichuris trichiura',
+    thai: 'พยาธิแส้ม้า',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:nematode'],
+    characteristics: 'Nematode รูปร่างคล้ายแส้ — ปลายหน้าเรียว (3/5 ของลำตัว) ปลายหลังหนา ตัวเต็มวัย 3–5 cm ไข่รูปลูกฟุตบอลมี polar plug 2 ข้าง',
+    pathogenesis: 'Trichuriasis — ส่วนใหญ่ไม่มีอาการ ถ้ามากๆ: ปวดท้อง ท้องเสียเรื้อรัง โลหิตจาง rectal prolapse ในเด็ก, การเจริญเติบโตช้า',
+    vector: 'แพร่ทาง fecal-oral ผ่านดินที่ปนเปื้อนไข่ embryonated',
+    additional: 'วินิจฉัย: stool exam หาไข่รูป football รักษา: Albendazole, Mebendazole'
+  },
+  {
+    id: 'hookworm',
+    name: 'Hookworm (Ancylostoma / Necator)',
+    thai: 'พยาธิปากขอ',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:nematode'],
+    characteristics: 'Nematode มีปากเป็นขอ (Ancylostoma มี cutting teeth, Necator มี cutting plate) ตัวเต็มวัย 1 cm ในลำไส้เล็ก ดูดเลือด',
+    pathogenesis: 'โรคพยาธิปากขอ — ground itch ที่เท้าตอนตัวอ่อนไช, ไอจาก Loeffler\'s syndrome, โลหิตจางจากการขาดธาตุเหล็ก (microcytic hypochromic) เพราะดูดเลือด, hypoalbuminemia',
+    vector: 'ตัวอ่อน filariform ในดินไชเข้าผิวหนังเท้า (เดินเท้าเปล่า) Ancylostoma duodenale (ยุโรป เอเชีย) Necator americanus (อเมริกา แอฟริกา)',
+    additional: 'วินิจฉัย: stool exam หาไข่ รักษา: Albendazole, Mebendazole + เสริมเหล็ก'
+  },
+  {
+    id: 'strongyloides',
+    name: 'Strongyloides stercoralis',
+    thai: 'พยาธิเส้นด้าย',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:nematode'],
+    characteristics: 'Nematode ตัวเล็กที่สุดในลำไส้คน (~2 mm) มี autoinfection สามารถวนซ้ำในร่างกายได้ ตัวเมีย parthenogenic (ไม่ต้องใช้ตัวผู้)',
+    pathogenesis: 'Strongyloidiasis — อาการเรื้อรังหลายปี ลมพิษ larva currens (ผื่นเลื้อย), ปวดท้อง ท้องเสีย, Hyperinfection syndrome ในผู้ภูมิคุ้มกันบกพร่อง (steroid, HTLV-1) เกิด disseminated disease ตายสูง',
+    vector: 'ตัวอ่อน filariform ในดินไชเข้าผิวหนัง autoinfection: ตัวอ่อนกลับเข้าทาง perianal',
+    additional: 'วินิจฉัย: stool exam (agar plate culture), serology (ELISA) รักษา: Ivermectin (เลือกแรก), Albendazole'
+  },
+  {
+    id: 'trichinella',
+    name: 'Trichinella spiralis',
+    thai: 'ทริคิเนลลา สไปราลิส',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:nematode'],
+    characteristics: 'Nematode ตัวเต็มวัยในลำไส้เล็ก ตัวอ่อนฝังในกล้ามเนื้อลายเป็น cyst (encysted larvae) ตัวอ่อนจะ calcify',
+    pathogenesis: 'Trichinellosis — ระยะลำไส้: ท้องเสีย ปวดท้อง, ระยะกล้ามเนื้อ: ปวดกล้ามเนื้อรุนแรง ไข้ บวมรอบตา (periorbital edema), eosinophilia, splinter hemorrhage, myocarditis, encephalitis',
+    vector: 'กินเนื้อหมู หมูป่า หมีดิบหรือสุกๆ ดิบๆ ที่มี encysted larvae',
+    additional: 'รักษา: Albendazole + Steroid (ลด inflammation) ป้องกัน: ปรุงเนื้อให้สุกถึง 71°C'
+  },
+  {
+    id: 'wuchereria',
+    name: 'Wuchereria bancrofti',
+    thai: 'พยาธิเท้าช้าง',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:nematode'],
+    characteristics: 'Filarial nematode ตัวเต็มวัยอยู่ในระบบน้ำเหลือง microfilaria ในเลือดออกหากินเวลากลางคืน (nocturnal periodicity)',
+    pathogenesis: 'โรคเท้าช้าง (Lymphatic filariasis) — ท่อน้ำเหลืองอักเสบเรื้อรัง อุดตัน บวมแขน ขา อัณฑะ (hydrocele) ผิวหนังหนาแข็งเหมือนช้าง (elephantiasis)',
+    vector: 'ยุงรำคาญ Culex quinquefasciatus, ยุงลาย, ยุงก้นปล่อง',
+    additional: 'วินิจฉัย: blood smear กลางคืน, antigen test รักษา: Diethylcarbamazine (DEC), Ivermectin + Albendazole'
+  },
+  {
+    id: 'angiostrongylus',
+    name: 'Angiostrongylus cantonensis',
+    thai: 'พยาธิหอยโข่ง',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:nematode'],
+    characteristics: 'Nematode ที่ก่อโรคในไทย ตัวเต็มวัยอาศัยในปอดของหนู (rat lungworm) ตัวอ่อนระยะ 3 ในหอยทาก',
+    pathogenesis: 'Eosinophilic meningitis — ปวดศีรษะรุนแรง คอแข็ง ไข้ paresthesia, eosinophilia ใน CSF ตัวอ่อนเข้าสมอง สำคัญในไทยและเอเชีย',
+    vector: 'กินหอยโข่ง หอยเชอร์รี่ (apple snail) ดิบหรือลวก กบ กุ้ง ปูที่กิน vector ปนเปื้อน',
+    additional: 'รักษา: Steroid (ลด inflammation) Albendazole (controversial), tap CSF บรรเทาอาการ'
+  },
+  {
+    id: 'gnathostoma',
+    name: 'Gnathostoma spinigerum',
+    thai: 'พยาธิตัวจี๊ด',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:nematode'],
+    characteristics: 'Nematode ที่พบบ่อยในไทย ตัวอ่อนระยะ 3 มี hooked spines บน head bulb',
+    pathogenesis: 'Gnathostomiasis — Cutaneous: ผื่นเคลื่อนที่ (creeping eruption), บวมเป็นพักๆ (migratory swelling), Visceral: ตัวอ่อนเข้าสมอง (eosinophilic meningoencephalitis), ตา (ophthalmic gnathostomiasis), ปอด',
+    vector: 'กินปลาน้ำจืดดิบ (ก้อยปลา ส้มฟัก ปลาช่อนดิบ) กบ งู ไก่ที่มีตัวอ่อน intermediate hosts: ปลา กบ',
+    additional: 'รักษา: Albendazole 21 วัน หรือ Ivermectin + ผ่าตัดเอาตัวอ่อนออก'
+  },
+
+  // ---- Cestodes เพิ่มเติม (พยาธิตัวแบน/ตืด) ----
+  {
+    id: 'taenia-saginata',
+    name: 'Taenia saginata',
+    thai: 'พยาธิตืดวัว',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:cestode'],
+    characteristics: 'Cestode ขนาดใหญ่ที่สุด ยาว 5–10 m ไม่มี hooks (unarmed scolex) มีแต่ 4 suckers proglottid มี uterine branches >15 ข้าง',
+    pathogenesis: 'Taeniasis — ส่วนใหญ่ไม่มีอาการ ปวดท้องเล็กน้อย น้ำหนักลด proglottid เคลื่อนที่ออกมาทางก้น ไม่ก่อ cysticercosis ในคน (ต่างจาก T. solium)',
+    vector: 'กินเนื้อวัวดิบ/สุกๆ ดิบๆ ที่มี cysticercus (ก้อยเนื้อ ลาบเนื้อดิบ)',
+    additional: 'รักษา: Praziquantel (single dose), Niclosamide'
+  },
+  {
+    id: 'diphyllobothrium',
+    name: 'Diphyllobothrium latum',
+    thai: 'พยาธิตืดปลา',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:cestode'],
+    characteristics: 'Cestode ที่ยาวที่สุดในคน (สูงสุด 25 m) Scolex มี 2 bothria (slit-like grooves) ไม่มี suckers ไข่ operculated',
+    pathogenesis: 'Diphyllobothriasis — ปวดท้อง ท้องเสีย, vitamin B12 deficiency (megaloblastic anemia) เพราะพยาธิดูดซึม B12',
+    vector: 'กินปลาน้ำจืดดิบ (ปลาแซลมอน ปลาเทราต์) ที่มี plerocercoid intermediate hosts: copepod และ ปลา',
+    additional: 'รักษา: Praziquantel + เสริม Vitamin B12'
+  },
+  {
+    id: 'echinococcus',
+    name: 'Echinococcus granulosus',
+    thai: 'พยาธิตืดสุนัข',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:cestode'],
+    characteristics: 'Cestode ขนาดเล็ก 3–7 mm ในลำไส้สุนัข (definitive host) คนเป็น intermediate host ตัวอ่อนสร้าง hydatid cyst ในอวัยวะ',
+    pathogenesis: 'Hydatid disease (Echinococcosis) — cyst ขนาดใหญ่ในตับ (70%) ปอด สมอง ถุงน้ำแตกอาจเกิด anaphylaxis และแพร่ตัวอ่อน (daughter cysts)',
+    vector: 'กลืนไข่จากอุจจาระสุนัข (เลี้ยงแกะ) — fecal-oral แกะเป็น intermediate host หลัก',
+    additional: 'วินิจฉัย: imaging, serology รักษา: ผ่าตัดเอา cyst ออก + Albendazole, PAIR (Puncture-Aspiration-Injection-Reaspiration)'
+  },
+
+  // ---- Trematodes เพิ่มเติม (พยาธิใบไม้) ----
+  {
+    id: 'fasciola',
+    name: 'Fasciola hepatica',
+    thai: 'พยาธิใบไม้ตับแกะ',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:trematode'],
+    characteristics: 'Trematode ขนาดใหญ่รูปใบไม้ 2–3 cm × 1 cm มี cone-shaped projection ที่ปลายหน้า ไข่ใหญ่ที่สุดในพยาธิคน operculated',
+    pathogenesis: 'Fascioliasis — ระยะเฉียบพลัน: ไข้ ปวดท้องด้านขวาบน eosinophilia, urticaria จากตัวอ่อนเดินทางในตับ, ระยะเรื้อรัง: ท่อน้ำดีอุดตัน cholangitis',
+    vector: 'กินผักน้ำสด (ผักบุ้ง น้ำเกาลัด) ที่มี metacercaria intermediate host: หอย Lymnaea',
+    additional: 'รักษา: Triclabendazole (เลือกแรก) — Praziquantel ใช้ไม่ได้ผล'
+  },
+  {
+    id: 'paragonimus',
+    name: 'Paragonimus westermani',
+    thai: 'พยาธิใบไม้ปอด',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:trematode'],
+    characteristics: 'Trematode รูปไข่ "coffee bean shape" 7–12 mm × 4–6 mm อาศัยเป็นคู่ในเนื้อปอด ไข่มี operculum ก่อ pulmonary cyst',
+    pathogenesis: 'Paragonimiasis — ไอเรื้อรัง เสมหะปนเลือด (rust-colored sputum) คล้ายวัณโรค, eosinophilia, เข้าสมองได้ (cerebral paragonimiasis) ทำให้ชัก พิการ',
+    vector: 'กินกุ้ง ปูน้ำจืดดิบ/ดอง (ปูเค็ม กุ้งจ่อม) ที่มี metacercaria สำคัญในไทยและเอเชีย',
+    additional: 'รักษา: Praziquantel'
+  },
+  {
+    id: 'schistosoma-hema',
+    name: 'Schistosoma haematobium',
+    thai: 'พยาธิใบไม้กระเพาะปัสสาวะ',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:trematode'],
+    characteristics: 'พยาธิใบไม้เลือดอาศัยใน vesical venules รอบกระเพาะปัสสาวะ ไข่มี terminal spine ขับออกทางปัสสาวะ',
+    pathogenesis: 'Urinary schistosomiasis — hematuria เรื้อรัง, ปัสสาวะลำบาก ปวด, fibrosis ของกระเพาะปัสสาวะ, เพิ่มความเสี่ยงมะเร็งกระเพาะปัสสาวะชนิด squamous cell carcinoma',
+    vector: 'Cercaria ในน้ำจืดไชเข้าผิวหนัง intermediate host: หอย Bulinus พบในแอฟริกาและตะวันออกกลาง',
+    additional: 'วินิจฉัย: urine exam หาไข่ terminal-spined รักษา: Praziquantel'
+  },
+  {
+    id: 'fasciolopsis',
+    name: 'Fasciolopsis buski',
+    thai: 'พยาธิใบไม้ลำไส้ใหญ่',
+    kingdom: 'parasite',
+    icon: '🪱',
+    categories: ['type:helminth', 'helminth:trematode'],
+    characteristics: 'Trematode ขนาดใหญ่ที่สุดในคน 2–7 cm × 1–2 cm รูปใบไม้ ในลำไส้เล็ก ไข่คล้าย Fasciola',
+    pathogenesis: 'Fasciolopsiasis — ปวดท้อง ท้องเสีย คลื่นไส้ บางคนเกิดบวมจาก hypoalbuminemia, eosinophilia, การติดเชื้อมากๆ ทำให้ขาดอาหารในเด็ก',
+    vector: 'กินพืชน้ำสด (ผักกระเฉด แห้ว) ที่มี metacercaria intermediate host: หอย พบในเอเชียตะวันออก-ตะวันออกเฉียงใต้',
+    additional: 'รักษา: Praziquantel'
+  },
+
+  // ---- Ectoparasites เพิ่มเติม ----
+  {
+    id: 'cimex',
+    name: 'Cimex lectularius',
+    thai: 'ตัวเรือดที่นอน',
+    kingdom: 'parasite',
+    icon: '🕷️',
+    categories: ['type:ectoparasite'],
+    characteristics: 'แมลง 6 ขา รูปไข่แบน ขนาด 4–7 mm สีน้ำตาลแดง ไม่มีปีก ออกหากินกลางคืน ดูดเลือดคนแล้วซ่อนตัวในที่นอน รอยต่อของเฟอร์นิเจอร์',
+    pathogenesis: 'แผลกัดของตัวเรือด (Cimicosis) — ผื่นแดงคันเป็นกลุ่ม 3 จุด "breakfast-lunch-dinner sign" ไม่เป็นพาหะของโรค (ไม่เหมือนเหา หมัด) แต่กระทบจิตใจและการนอน',
+    vector: 'ติดมากับกระเป๋าเดินทาง เฟอร์นิเจอร์มือสอง โรงแรม',
+    additional: 'รักษา: ซิมพ์โทมาติก, antihistamine, ลดการคัน กำจัด: ความร้อน >50°C, ยาฆ่าแมลง pyrethroid (มักดื้อยา)'
+  },
+  {
+    id: 'demodex',
+    name: 'Demodex folliculorum',
+    thai: 'ไรขน',
+    kingdom: 'parasite',
+    icon: '🕷️',
+    categories: ['type:ectoparasite'],
+    characteristics: 'ไรเล็กมาก 0.3 mm ลำตัวเรียวยาว 8 ขาสั้น อาศัยในรูขุมขนและต่อมไขมัน โดยเฉพาะที่ใบหน้า เปลือกตา พบเป็น normal flora ในผู้ใหญ่ส่วนใหญ่',
+    pathogenesis: 'Demodicosis — Rosacea, Demodex blepharitis (เปลือกตาอักเสบ ขนตาร่วง), Pityriasis folliculorum, รุนแรงในผู้ภูมิคุ้มกันบกพร่อง',
+    vector: 'แพร่ผ่านการสัมผัสใกล้ชิด ใช้เครื่องสำอาง ผ้าเช็ดตัวร่วมกัน',
+    additional: 'รักษา: Permethrin, Metronidazole topical, Tea tree oil, Ivermectin (severe)'
+  },
 
 // โครงสร้างหมวดหมู่ (สำหรับ sidebar)
 const CATEGORY_TREE = [
