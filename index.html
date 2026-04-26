@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Microrearch — คลังข้อมูลจุลชีววิทยา</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Login / Register Screen -->
+  <div id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <img src="logo.png" alt="Microrearch" class="auth-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';this.parentElement.querySelector('.auth-title-fallback').style.display='block'" />
+      <div class="auth-logo" style="display:none">M</div>
+      <h1 class="auth-title-fallback" style="display:none">Microrearch</h1>
+      <p class="subtitle">เข้าสู่ระบบเพื่อใช้งาน</p>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login" onclick="switchAuthTab('login')">เข้าสู่ระบบ</button>
+        <button class="auth-tab" data-tab="register" onclick="switchAuthTab('register')">สมัครสมาชิก</button>
+      </div>
+
+      <div id="authError" class="auth-error"></div>
+
+      <form id="loginForm" class="auth-form" onsubmit="return doLogin(event)">
+        <div class="form-field">
+          <label>ชื่อผู้ใช้</label>
+          <input type="text" name="username" required autocomplete="username" />
+        </div>
+        <div class="form-field">
+          <label>รหัสผ่าน</label>
+          <input type="password" name="password" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary">🔐 เข้าสู่ระบบ</button>
+      </form>
+
+      <form id="registerForm" class="auth-form" hidden onsubmit="return doRegister(event)">
+        <div class="form-field">
+          <label>ชื่อผู้ใช้ <span style="color:var(--danger)">*</span></label>
+          <input type="text" name="username" required minlength="3" maxlength="20" autocomplete="username" />
+        </div>
+        <div class="form-field">
+          <label>ชื่อแสดงผล</label>
+          <input type="text" name="displayName" maxlength="40" placeholder="ใส่ชื่อจริงหรือชื่อเล่น" />
+        </div>
+        <div class="form-field">
+          <label>รหัสผ่าน <span style="color:var(--danger)">*</span></label>
+          <input type="password" name="password" required minlength="4" autocomplete="new-password" />
+        </div>
+        <div class="form-field">
+          <label>ยืนยันรหัสผ่าน <span style="color:var(--danger)">*</span></label>
+          <input type="password" name="password2" required minlength="4" autocomplete="new-password" />
+        </div>
+        <button type="submit" class="btn btn-success">✨ สมัครสมาชิก</button>
+      </form>
+
+      <div class="auth-hint">
+        บัญชีตัวอย่าง: <code>admin</code> / <code>admin123</code>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" hidden id="appHeader">
+    <div class="brand">
+      <img src="logo.png" alt="Microrearch" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="brand-fallback" style="display:none;align-items:center;gap:12px">
+        <div class="logo">M</div>
+        <div>
+          <h1>Microrearch</h1>
+          <p class="tagline">คลังอ้างอิงจุลชีพก่อโรค</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <input id="search" type="search" placeholder="ค้นหาเชื้อ เช่น Staphylococcus, HIV, พยาธิใบไม้..." autocomplete="off" />
+      <span class="search-count" id="searchCount"></span>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn btn-outline" id="exportBtn" title="ส่งออกข้อมูล JSON">⬇ ส่งออก</button>
+      <button class="btn btn-primary" id="addBtn">+ เพิ่มเชื้อ</button>
+      <div class="user-badge" id="userBadge">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <span id="userName">guest</span>
+        <button class="logout-btn" onclick="doLogout()" title="ออกจากระบบ">ออก</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout" hidden id="appMain">
+    <aside class="sidebar">
+      <h2>หมวดหมู่</h2>
+      <nav id="categoryNav"></nav>
+      <button id="resetBtn" class="reset-btn">↺ ล้างตัวกรอง</button>
+    </aside>
+
+    <section class="content">
+      <div class="content-header">
+        <div class="breadcrumb" id="breadcrumb">ทั้งหมด</div>
+      </div>
+      <div id="grid" class="grid"></div>
+      <div id="emptyState" class="empty" hidden>
+        <div class="empty-icon">🔍</div>
+        <p>ไม่พบข้อมูลที่ตรงกับการค้นหา</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- View Modal -->
+  <div id="viewModal" class="modal" hidden onclick="if(event.target===this)closeModal('viewModal')">
+    <div class="modal-card">
+      <button type="button" class="close-btn" onclick="closeModal('viewModal')" aria-label="ปิด">×</button>
+      <div id="viewModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Edit/Add Modal -->
+  <div id="editModal" class="modal" hidden onclick="if(event.target===this)closeModal('editModal')">
+    <div class="modal-card">
+      <button type="button" class="close-btn" onclick="closeModal('editModal')" aria-label="ปิด">×</button>
+      <div class="form-section">
+        <h2 id="editTitle">เพิ่มเชื้อใหม่</h2>
+        <p class="subtitle">กรอกข้อมูลให้ครบถ้วน ฟิลด์ที่มี <span style="color:var(--danger)">*</span> จำเป็นต้องกรอก</p>
+
+        <form id="editForm" class="form-grid">
+          <div class="form-row">
+            <div class="form-field">
+              <label>ชื่อวิทยาศาสตร์ <span class="required">*</span></label>
+              <input type="text" name="name" required placeholder="เช่น Escherichia coli" />
+            </div>
+            <div class="form-field">
+              <label>ชื่อภาษาไทย</label>
+              <input type="text" name="thai" placeholder="เช่น อี.โคไล" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>กลุ่ม <span class="required">*</span></label>
+              <select name="kingdom" id="kingdomSelect" required>
+                <option value="bacteria">แบคทีเรีย (Bacteria)</option>
+                <option value="virus">ไวรัส (Virus)</option>
+                <option value="parasite">ปรสิต (Parasites)</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Emoji แสดงผล</label>
+              <input type="text" name="icon" maxlength="4" placeholder="🦠" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>หมวดหมู่ย่อย (เลือกได้หลายอัน)</label>
+            <div class="checkbox-group" id="categoriesBox"></div>
+          </div>
+
+          <div class="form-field">
+            <label>รูปภาพ</label>
+            <label class="image-upload" for="imgInput">
+              <div class="image-upload-text">📷 คลิกเพื่ออัปโหลดรูปภาพ (หรือวาง URL)</div>
+              <input type="file" id="imgInput" accept="image/*" />
+              <img id="imgPreview" class="image-preview" hidden alt="preview" />
+            </label>
+            <input type="text" name="image" id="imageUrl" placeholder="หรือใส่ URL รูปภาพ" style="margin-top: 8px;" />
+          </div>
+
+          <div class="form-field">
+            <label>ลักษณะของเชื้อ</label>
+            <textarea name="characteristics" rows="3" placeholder="รูปร่าง ขนาด ลักษณะการย้อมสี..."></textarea>
+          </div>
+          <div class="form-field">
+            <label>การก่อโรค</label>
+            <textarea name="pathogenesis" rows="3" placeholder="โรคที่เกิด อาการ กลไก..."></textarea>
+          </div>
+          <div class="form-field">
+            <label>พาหะ / การติดต่อ</label>
+            <textarea name="vector" rows="2" placeholder="วิธีการแพร่ พาหะ..."></textarea>
+          </div>
+          <div class="form-field">
+            <label>ข้อมูลเพิ่มเติม</label>
+            <textarea name="additional" rows="2" placeholder="การวินิจฉัย การรักษา การป้องกัน..."></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button type="button" class="btn btn-danger" id="deleteBtn" hidden>🗑 ลบ</button>
+            <div class="form-footer-right">
+              <button type="button" class="btn btn-ghost" onclick="closeModal('editModal')">ยกเลิก</button>
+              <button type="submit" class="btn btn-success">💾 บันทึก</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© Microrearch · เพื่อการศึกษา · ข้อมูลถูกบันทึกในเครื่องของคุณ</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
