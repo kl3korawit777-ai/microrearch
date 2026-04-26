@@ -141,15 +141,23 @@ const $$ = (sel) => document.querySelectorAll(sel);
 
 // ============ DATA PERSISTENCE ============
 function loadData() {
+  let stored = [];
   try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      state.microbes = JSON.parse(stored);
-      return;
-    }
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) stored = JSON.parse(raw);
   } catch (e) { console.warn('Load failed', e); }
-  state.microbes = JSON.parse(JSON.stringify(MICROBES));
-  saveData();
+
+  // รวม seed data ใหม่กับของที่ user มีอยู่ (ไม่ทับ user data)
+  const storedIds = new Set(stored.map(m => m.id));
+  const newSeeds = MICROBES.filter(m => !storedIds.has(m.id));
+  state.microbes = [...stored, ...newSeeds];
+
+  if (newSeeds.length > 0 || stored.length === 0) {
+    saveData();
+    if (stored.length > 0 && newSeeds.length > 0) {
+      setTimeout(() => toast(`ซิงค์ข้อมูลใหม่ ${newSeeds.length} รายการ ✨`, 'success'), 500);
+    }
+  }
 }
 function saveData() {
   try {
