@@ -183,6 +183,9 @@ function categoryLabel(id) {
 function genId() {
   return 'm_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 }
+function linkifyRefs(s) {
+  return s.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+}
 function escapeHtml(s) {
   if (s == null) return '';
   return String(s).replace(/[&<>"']/g, (c) =>
@@ -360,6 +363,15 @@ function openView(id) {
       </div>
     `).join('');
 
+  const refsHtml = (m.references && m.references.length)
+    ? `<div class="detail-section">
+        <h3>เอกสารอ้างอิง</h3>
+        <ol class="ref-list">
+          ${m.references.map(r => `<li>${linkifyRefs(escapeHtml(r))}</li>`).join('')}
+        </ol>
+      </div>`
+    : '';
+
   $('viewModalBody').innerHTML = `
     <div class="modal-img ${m.kingdom}">${imgHtml}</div>
     <div class="modal-content">
@@ -377,6 +389,7 @@ function openView(id) {
         ${tagsHtml}
       </div>
       ${sections}
+      ${refsHtml}
     </div>
   `;
   $('viewEditBtn').onclick = () => {
