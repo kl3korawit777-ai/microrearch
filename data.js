@@ -905,6 +905,7 @@ const MICROBES = [
       'กรมควบคุมโรค. แนวทางเวชปฏิบัติโรคพิษสุนัขบ้า. https://ddc.moph.go.th/',
       'CDC. Rabies. https://www.cdc.gov/rabies/'
     ]
+  },
   {
     id: 'adenovirus',
     name: 'Adenovirus',
