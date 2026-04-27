@@ -213,6 +213,7 @@ const MICROBES = [
       'Wangroongsarb P, Kohda T, Jittaprasartsin C, et al. Molecular characterization of Clostridium botulinum isolates from foodborne outbreaks in Thailand. PLoS One. 2014;9(8):e105408.',
       'CDC. Botulism. https://www.cdc.gov/botulism/',
       'Lonati D, Schicchi A, Crevani M, et al. Foodborne botulism: clinical diagnosis and medical treatment. Toxins. 2020;12(8):509.'
+    ]
   },
   {
     id: 'helicobacter-pylori',
