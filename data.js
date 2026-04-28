@@ -1212,6 +1212,9 @@ const MICROBES = [
       'Gershman MD, Sotir MJ. Update on yellow fever vaccine. https://www.cdc.gov/yellow-fever/',
       'CDC. Yellow Fever. https://www.cdc.gov/yellow-fever/'
     ]
+  },
+  {
+    id: 'zika',
     name: 'Zika Virus',
     thai: 'ไวรัสซิกา',
     kingdom: 'virus',
