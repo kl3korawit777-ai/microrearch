@@ -1,4 +1,4 @@
-﻿// Microrearch — ข้อมูลเชื้อก่อโรค
+﻿// Microsearch — ข้อมูลเชื้อก่อโรค
 // รูปภาพจาก Wikimedia Commons (CC-licensed) สามารถเปลี่ยนเป็นไฟล์ใน images/ ได้
 
 const MICROBES = [

@@ -1,4 +1,4 @@
-// Microrearch — main app logic
+// Microsearch — main app logic
 const STORAGE_KEY = 'microrearch_data_v1';
 const USERS_KEY = 'microrearch_users_v1';
 const SESSION_KEY = 'microrearch_session_v1';
@@ -514,7 +514,7 @@ function exportData() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `microrearch-${new Date().toISOString().slice(0, 10)}.json`;
+  a.download = `microsearch-${new Date().toISOString().slice(0, 10)}.json`;
   a.click();
   URL.revokeObjectURL(url);
   toast(`ส่งออก ${state.microbes.length} รายการแล้ว`, 'success');
